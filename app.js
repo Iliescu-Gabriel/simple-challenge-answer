@@ -5,8 +5,6 @@ const userPassWord = document.querySelector('input[name="userPassword"]');
 const loginForm = document.getElementById("form");
 const modal = document.querySelector(".container-msg-modal");
 const modalContent = document.querySelectorAll(".container-modal-content");
-const loginUrl =
-  "https://simple-challenge-91862821cfe5.herokuapp.com/auth/login";
 
 console.log("Great! You can debug it!");
 
@@ -37,7 +35,7 @@ function init() {
 // password: YouCrackedIt
 async function loginRequest(user, password) {
   try {
-    const response = await fetch(loginUrl, {
+    const response = await fetch("/auth/login", {
       method: "POST",
       body: JSON.stringify({
         username: user,
